@@ -16,9 +16,13 @@ print(foo(1))
    
 
 def longest_run(mylist, key):
+  size = 0
+  for i,v in enumerate(mylist):
+    if v == key and (mylist[i+1]) = v:
+      size = size + 1
+  return size
 
-  pass
-
+      
 
 class Result:
     """ done """
