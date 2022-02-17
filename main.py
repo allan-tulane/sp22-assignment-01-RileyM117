@@ -16,11 +16,20 @@ print(foo(1))
    
 
 def longest_run(mylist, key):
+  result = None
+  prev = None
   size = 0
-  for i,v in enumerate(mylist):
-    if v == key and (mylist[i+1]) = v:
-      size = size + 1
-  return size
+  max_size = 0
+  for i in mylist:
+    if i == prev and prev == key:
+      size += 1
+      if size > max_size:
+        max_size = size 
+    else:
+      size = 0
+      prev = i
+      
+  return max_size+1
 
       
 
