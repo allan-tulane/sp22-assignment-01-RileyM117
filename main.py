@@ -53,20 +53,24 @@ def longest_run_recursive(mylist, key):
   prev = None
   left_size = 0
   right_size = 0
-  longest_size = left_size + right_size
-  if len(mylist) = 1 and mylist[0] = key:
-    return mylist[0]
-  else:
+  longest_size = 0
+  for i in mylist:
+    if i == prev and prev == key:
+      longest_size+=1
     for i in mylist:
       left = mylist[:length]
       right = mylist[length:]
-      for i in left:
-        if i = prev and prev = key:
-          left_size+=1
-      for i in right:
-        if i = prev and prev = key:
-          right_size+=1
-  return longest_size 
+    for i in left:
+      if i == prev and prev == key:
+        left_size+=1
+    for i in right:
+      if i == prev and prev == key:
+        right_size+=1
+
+  if left_size < right_size:
+    return right_size
+  if right_size < left_size:
+    return left_size 
 
     
 
