@@ -16,7 +16,7 @@ print(foo(1))
    
 
 def longest_run(mylist, key):
-  result = None
+  
   prev = None
   size = 0
   max_size = 0
@@ -47,8 +47,31 @@ class Result:
     
     
 def longest_run_recursive(mylist, key):
-    ### TODO
-    pass
+  right = None
+  left = None
+  length = len(mylist)//2
+  prev = None
+  left_size = 0
+  right_size = 0
+  longest_size = left_size + right_size
+  if len(mylist) = 1 and mylist[0] = key:
+    return mylist[0]
+  else:
+    for i in mylist:
+      left = mylist[:length]
+      right = mylist[length:]
+      for i in left:
+        if i = prev and prev = key:
+          left_size+=1
+      for i in right:
+        if i = prev and prev = key:
+          right_size+=1
+  return longest_size 
+
+    
+
+
+
 
 ## Feel free to add your own tests here.
 def test_longest_run():
